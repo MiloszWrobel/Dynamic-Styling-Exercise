@@ -1,13 +1,28 @@
+import { useState } from "react";
+
 function App() {
+  const [currentColour, setCurrentColour] = useState("white");
+  function handleYesClick() {
+    setCurrentColour("green");
+  }
+  function handleNoClick() {
+    setCurrentColour("red");
+  }
   return (
     <div id="app">
-      <h1>CSS is great!</h1>
+      <h1
+        style={{
+          color: currentColour,
+        }}
+      >
+        CSS is great!
+      </h1>
       <menu>
         <li>
-          <button>Yes</button>
+          <button onClick={handleYesClick}>Yes</button>
         </li>
         <li>
-          <button>No</button>
+          <button onClick={handleNoClick}>No</button>
         </li>
       </menu>
     </div>
